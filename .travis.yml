@@ -6,9 +6,9 @@ before_install:
 install:
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
-script: travis_wait 30
+script: 
   - flake8
-  - python run.py --train --goal tracking
+  - travis_wait 30 python run.py --train --goal tracking
   - python run.py --goal tracking
   - python -m pytest tests/test_*.py
   - python -m bugbug.bug_snapshot
