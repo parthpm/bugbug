@@ -9,7 +9,7 @@ install:
 script:
   - flake8
   - python run.py --train --goal tracking
-  - python run.py --goal bug
+  - python run.py --goal tracking
   - python -m pytest tests/test_*.py
   - python -m bugbug.bug_snapshot
   - python setup.py sdist
